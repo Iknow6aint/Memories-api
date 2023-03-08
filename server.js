@@ -26,14 +26,19 @@ app.use(cors())
 app.use('/posts', postRoutes)
 app.use('/user', userRoutes)
 
+
+app.get('/', (req, res) => {
+    res.send('hello world')
+})
 app.get('*', (req, res) => {
     const __dirname = path.resolve();
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 //mongoDB init
 
-const CONNECTION_URL = 'mongodb://127.0.0.1:27017/memories';
-//'mongodb+srv://admin:Jajabone@cluster0.qzlrfzl.mongodb.net/?retryWrites=true&w=majority' 
+
+const CONNECTION_URL = 'mongodb+srv://admin:Jajabone@cluster0.qzlrfzl.mongodb.net/?retryWrites=true&w=majority'
+
 
 mongoose
     .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
