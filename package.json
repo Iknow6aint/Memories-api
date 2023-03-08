@@ -1,28 +1,28 @@
 {
-    "name": "memories-app",
+    "name": "server",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
+    "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "watch": " npm run server & npm run client",
-        "server": "npm start --prefix server",
-        "client": "npm start --prefix client",
-        "install-client": "npm install --prefix client",
-        "install-server": "npm install --prefix server",
-        "install": "npm run install-client && npm install-server ",
-        "deploy": "npm run build --prefix client && npm start --prefix server",
-        "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Iknow6aint/Memories-app.git"
+        "start": "nodemon server.js",
+        "dev": " set DEBUG=* & nodemon server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Iknow6aint/Memories-app/issues"
-    },
-    "homepage": "https://github.com/Iknow6aint/Memories-app#readme"
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "debug": "^4.3.4",
+        "dotenv": "^16.0.3",
+        "express": "^4.17.1",
+        "jest": "^29.4.2",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.29",
+        "morgan": "^1.10.0",
+        "path": "^0.12.7"
+    }
 }
